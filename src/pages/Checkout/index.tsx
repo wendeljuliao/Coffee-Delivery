@@ -5,8 +5,11 @@ import {
   MapPinLine,
   Money,
 } from "phosphor-react";
+import React, { useContext } from "react";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
+import { CoffeesContext } from "../../contexts/CoffeesContext";
+import { mappingCoffees } from "../../utils/mapping-coffee-images";
 import { CartCard } from "./components/CartCard";
 import { Select } from "./components/Select";
 import {
@@ -23,6 +26,27 @@ import {
 } from "./styles";
 
 export function Checkout() {
+  const { coffeesInCart } = useContext(CoffeesContext);
+
+  const totalValueCoffees = coffeesInCart.reduce(
+    (sum, item) => sum + item.quantity * item.price,
+    0
+  );
+
+  const formattedTotalValueCoffees = String(
+    totalValueCoffees.toFixed(2)
+  ).replace(".", ",");
+
+  const totalDelivery = 3.5;
+  const formattedTotalDelivery = String(totalDelivery.toFixed(2)).replace(
+    ".",
+    ","
+  );
+
+  const totalOrder = totalValueCoffees + totalDelivery;
+
+  const formattedTotalOrder = String(totalOrder.toFixed(2)).replace(".", ",");
+
   return (
     <CheckoutContainer>
       <LeftSide>
@@ -75,27 +99,33 @@ export function Checkout() {
       <RightSide>
         <h2>Cafés selecionados</h2>
         <InfosCoffees>
-          {Array.from({ length: 2 }, (u, i) => {
+          {coffeesInCart.map((coffee: any) => {
             return (
-              <>
-                <CartCard key={i} />
+              <React.Fragment key={coffee.id}>
+                <CartCard
+                  id={coffee.id}
+                  name={coffee.name}
+                  price={coffee.price}
+                  quantity={coffee.quantity}
+                  img={mappingCoffees[coffee.name].image}
+                />
                 <Separator />
-              </>
+              </React.Fragment>
             );
           })}
 
           <InfosPrice>
             <div>
               <span>Total de itens</span>
-              <span>R$ 29,70</span>
+              <span>R$ {formattedTotalValueCoffees}</span>
             </div>
             <div>
               <span>Entrega</span>
-              <span>R$ 3,50</span>
+              <span>R$ {formattedTotalDelivery}</span>
             </div>
             <div>
               <strong>Total</strong>
-              <strong>R$ 33,20</strong>
+              <strong>R$ {formattedTotalOrder}</strong>
             </div>
           </InfosPrice>
           <Button name={"CONFIRMAR PEDIDO"} />

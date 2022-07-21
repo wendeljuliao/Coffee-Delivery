@@ -2,11 +2,14 @@ import coffeLogo from "../../assets/Logo.svg";
 import { MapPin, ShoppingCart } from "phosphor-react";
 import { HeaderContainer, ActionsContent } from "./styles";
 import { Cart } from "../Cart";
+import { Link } from "react-router-dom";
 
 export function Header() {
   return (
     <HeaderContainer>
-      <img src={coffeLogo} alt="Logo" />
+      <Link to="/">
+        <img src={coffeLogo} alt="Logo" />
+      </Link>
 
       <ActionsContent>
         <div>

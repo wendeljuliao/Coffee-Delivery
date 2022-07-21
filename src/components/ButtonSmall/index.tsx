@@ -4,11 +4,16 @@ import { ButtonContainer } from "./styles";
 interface IButtonSmallProps {
   icon: ReactNode;
   name: string;
+  handleRemoveCoffeeCart: () => void;
 }
 
-export function ButtonSmall({ icon, name }: IButtonSmallProps) {
+export function ButtonSmall({
+  icon,
+  name,
+  handleRemoveCoffeeCart,
+}: IButtonSmallProps) {
   return (
-    <ButtonContainer>
+    <ButtonContainer onClick={handleRemoveCoffeeCart}>
       {icon}
       <span>{name}</span>
     </ButtonContainer>

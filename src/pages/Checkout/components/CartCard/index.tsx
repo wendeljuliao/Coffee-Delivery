@@ -1,24 +1,44 @@
+import { useContext } from "react";
+import { CoffeesContext } from "../../../../contexts/CoffeesContext";
 import { CardStyle, InfoCard } from "./styles";
 
-import temporaryImage from "../../../../assets/Type=Expresso.svg";
 import { Counter } from "../../../../components/Counter";
 import { ButtonSmall } from "../../../../components/ButtonSmall";
 import { Trash } from "phosphor-react";
 
-export function CartCard() {
+interface ICartCard {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  img: string;
+}
+
+export function CartCard({ id, name, price, quantity, img }: ICartCard) {
+  const { removeCoffeCart } = useContext(CoffeesContext);
+  const numberFormatted = String(price).padEnd(4, "0").replace(".", ",");
+
+  function removeCart() {
+    removeCoffeCart(id);
+  }
+
   return (
     <CardStyle>
       <InfoCard>
-        <img src={temporaryImage} alt="" />
+        <img src={img} alt="" />
         <div>
-          <span>Expresso Tradicional</span>
+          <span>{name}</span>
           <div className="actions">
-            <Counter />
-            <ButtonSmall icon={<Trash size={16} />} name={"REMOVER"} />
+            <Counter idCoffee={id} quantity={quantity} />
+            <ButtonSmall
+              icon={<Trash size={16} />}
+              name={"REMOVER"}
+              handleRemoveCoffeeCart={removeCart}
+            />
           </div>
         </div>
       </InfoCard>
-      <span>R$ 9,90</span>
+      <span>{numberFormatted}</span>
     </CardStyle>
   );
 }

@@ -5,6 +5,7 @@ export const mocksCoffee = [
     description: "O tradicional café feito com água quente e grãos moídos",
     tags: ["TRADICIONAL"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 1,
@@ -12,6 +13,7 @@ export const mocksCoffee = [
     description: "Expresso diluído, menos intenso que o tradicional",
     tags: ["TRADICIONAL"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ export const mocksCoffee = [
     description: "Café expresso tradicional com espuma cremosa",
     tags: ["TRADICIONAL"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 3,
@@ -26,6 +29,7 @@ export const mocksCoffee = [
     description: "Bebida preparada com café expresso e cubos de gelo",
     tags: ["TRADICIONAL", "GELADO"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ export const mocksCoffee = [
     description: "Meio a meio de expresso tradicional com leite vaporizado",
     tags: ["TRADICIONAL", "COM LEITE"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 5,
@@ -41,6 +46,7 @@ export const mocksCoffee = [
       "Uma dose de café expresso com o dobro de leite e espuma cremosa",
     tags: ["TRADICIONAL", "COM LEITE"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 6,
@@ -49,6 +55,7 @@ export const mocksCoffee = [
       "Bebida com canela feita de doses iguais de café, leite e espuma",
     tags: ["TRADICIONAL", "COM LEITE"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 7,
@@ -57,6 +64,7 @@ export const mocksCoffee = [
       "Café expresso misturado com um pouco de leite quente e espuma",
     tags: ["TRADICIONAL", "COM LEITE"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 8,
@@ -64,6 +72,7 @@ export const mocksCoffee = [
     description: "Café expresso com calda de chocolate, pouco leite e espuma",
     tags: ["TRADICIONAL", "COM LEITE"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 9,
@@ -72,6 +81,7 @@ export const mocksCoffee = [
       "Bebida feita com chocolate dissolvido no leite quente e café",
     tags: ["ESPECIAL", "COM LEITE"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 10,
@@ -80,6 +90,7 @@ export const mocksCoffee = [
       "Drink gelado de café expresso com rum, creme de leite e hortelã",
     tags: ["ESPECIAL", "ALCOÓLICO", "GELADO"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 11,
@@ -87,6 +98,7 @@ export const mocksCoffee = [
     description: "Bebida adocicada preparada com café e leite de coco",
     tags: ["ESPECIAL"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 12,
@@ -94,6 +106,7 @@ export const mocksCoffee = [
     description: "Bebida preparada com grãos de café árabe e especiarias",
     tags: ["ESPECIAL"],
     price: 9.9,
+    quantity: 1
   },
   {
     id: 13,
@@ -101,5 +114,6 @@ export const mocksCoffee = [
     description: "Bebida a base de café, uísque irlandês, açúcar e chantilly",
     tags: ["ESPECIAL", "ALCOÓLICO"],
     price: 9.9,
+    quantity: 1
   },
 ];
