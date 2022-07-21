@@ -9,12 +9,12 @@ export const GlobalStyle = createGlobalStyle`
 
   :focus {
     outline: 0;
-    box-shadow: 0 0 0 2px black;
+    //box-shadow: 0 0 0 2px black;
   }
 
   body {
-    background-color: ${props => props.theme['background']};
-    color: ${props => props.theme['base-text']};
+    background: ${(props) => props.theme['background']};
+    color: ${(props) => props.theme['base-text']};
     -webkit-font-smoothing: antialiased;
   }
 

@@ -23,15 +23,13 @@ export const ActionsContent = styled.div`
   justify-content: center;
 
   gap: 0.75rem;
-
-  div {
+  
+  div:first-child {
     display: flex;
     padding: 0.5rem;
 
     border-radius: 6px;
-  }
-  
-  div:first-child {
+    
     background-color: ${props => props.theme['purple-light']};
     gap: 0.25rem;
     
@@ -51,9 +49,4 @@ export const ActionsContent = styled.div`
     }
   }
 
-  div:last-child{
-    background-color: ${props => props.theme['yellow-light']};
-    color: ${props => props.theme['yellow-dark']};
-    cursor: pointer;
-  }
 `;

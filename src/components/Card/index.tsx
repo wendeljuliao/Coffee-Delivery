@@ -1,4 +1,6 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
+import { Counter } from "../Counter";
+import { IconButton } from "../IconButton";
 import { CardContainer, TagsContainer, InfosBuy, ActionsBuy } from "./styles";
 
 interface ICardProps {
@@ -29,12 +31,8 @@ export function Card({ name, description, tags, price, img }: ICardProps) {
           R$ <span>{numeroFormatado}</span>
         </p>
         <ActionsBuy>
-          <div>
-            <Minus size={14} weight="bold" />
-            <span>1</span>
-            <Plus size={14} weight="bold" />
-          </div>
-          <ShoppingCart size={22} weight="fill" />
+          <Counter />
+          <IconButton />
         </ActionsBuy>
       </InfosBuy>
     </CardContainer>

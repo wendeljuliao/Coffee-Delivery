@@ -1,6 +1,7 @@
 import coffeLogo from "../../assets/Logo.svg";
 import { MapPin, ShoppingCart } from "phosphor-react";
 import { HeaderContainer, ActionsContent } from "./styles";
+import { Cart } from "../Cart";
 
 export function Header() {
   return (
@@ -13,9 +14,7 @@ export function Header() {
           <span>Porto Alegre, RS</span>
         </div>
 
-        <div>
-          <ShoppingCart size={22} weight="fill" />
-        </div>
+        <Cart />
       </ActionsContent>
     </HeaderContainer>
   );

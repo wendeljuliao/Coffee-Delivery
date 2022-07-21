@@ -90,40 +90,5 @@ export const ActionsBuy = styled.div`
   align-items: center;
   
   gap: 0.5rem;
-  // svgs que estão dentro do primeiro nivel do "pai"
-  & > svg {
-    box-sizing: initial;
 
-    color: ${props => props.theme['base-card']};
-    background-color: ${props => props.theme['purple-dark']};
-    padding: 0.5rem;
-
-    border-radius: 6px;
-
-    cursor: pointer;
-  }
-
-  div {
-    display: flex;
-
-    width: 4.5rem;
-
-    align-items: center;
-    justify-content: space-between;
-
-    background-color: ${props => props.theme['base-button']};
-    padding: 0.53125rem 0.5rem;
-
-    border-radius: 6px;
-
-    span {
-      line-height: 1.3;
-      color: ${props => props.theme['base-title']};
-    }
-    
-    svg {
-      color: ${props => props.theme['purple']};
-      cursor: pointer;
-    }
-  }
 `;
