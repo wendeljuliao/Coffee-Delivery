@@ -1,10 +1,14 @@
-import { ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import { ButtonContainer } from "./styles";
 
-interface IButton {
-  name: string;
-}
-
-export function Button({ name }: IButton) {
-  return <ButtonContainer>{name}</ButtonContainer>;
+export function Button({
+  name,
+  type,
+  disabled,
+}: ButtonHTMLAttributes<HTMLButtonElement>) {
+  return (
+    <ButtonContainer type={type} disabled={disabled}>
+      {name}
+    </ButtonContainer>
+  );
 }

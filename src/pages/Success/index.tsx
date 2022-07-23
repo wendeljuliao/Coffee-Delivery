@@ -7,8 +7,14 @@ import {
 } from "./styles";
 
 import illustration from "../../assets/Illustration.svg";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 export function Success() {
+  const { dataUser } = useContext(UserContext);
+
+  const { street, number, methodPayment } = dataUser;
+
   return (
     <SuccessContainer>
       <section>
@@ -22,7 +28,10 @@ export function Success() {
             <div>
               <MapPin size={32} weight="fill" />
               <p>
-                Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+                Entrega em{" "}
+                <strong>
+                  {street},{number}
+                </strong>
                 <br />
                 Farrapos - Porto Alegre, RS
               </p>
@@ -41,7 +50,7 @@ export function Success() {
               <p>
                 Pagamento na entrega
                 <br />
-                <strong>Cartão de Crédito</strong>
+                <strong>{methodPayment}</strong>
               </p>
             </div>
           </InfosOrder>

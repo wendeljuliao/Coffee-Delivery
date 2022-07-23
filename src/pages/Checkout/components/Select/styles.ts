@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const SelectStyle = styled.button`
+interface ISelectStyleProps {
+  methodPayment: string | null;
+}
+
+export const SelectStyle = styled.button<ISelectStyleProps>`
   display: flex;
   flex: 1;
   
@@ -33,8 +37,14 @@ export const SelectStyle = styled.button`
     cursor: pointer;
   }
 
-  &:hover {
+  &:not(:disabled):hover {
     background-color: ${props => props.theme['base-hover']};
   }
+
+  ${({name, methodPayment}) => name === methodPayment && css`
+    border: 1px solid ${props => props.theme['purple']};
+    background-color: ${props => props.theme['purple-light']};
+    padding: calc(1rem - 1px);
+  `};
 
 `;

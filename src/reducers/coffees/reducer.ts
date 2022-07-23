@@ -1,3 +1,4 @@
+import { mocksCoffee } from "../../mocks/Coffees";
 import { ActionTypes } from "./actions";
 
 export interface Coffee {
@@ -53,6 +54,15 @@ export function coffeesReducer(state: CoffeesState, action: any) {
           return {...coffee};
         })
       }
+    
+    case ActionTypes.CLEAN_ALL_CART: {
+      return {
+        ...state,
+        coffees: state.coffees.map((coffee) => {
+          return {...coffee, quantity: 1, inCart: false}
+        })
+      }
+    } 
     
     default:
       return state

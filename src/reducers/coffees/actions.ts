@@ -1,7 +1,8 @@
 export enum ActionTypes {
   MODIFY_QUANTITY_COFFEE = 'MODIFY_QUANTITY_COFFEE',
   ADD_COFFEE_CART = 'ADD_COFFEE_CART',
-  REMOVE_COFFEE_CART = 'REMOVE_COFFEE_CART'
+  REMOVE_COFFEE_CART = 'REMOVE_COFFEE_CART',
+  CLEAN_ALL_CART = 'CLEAN_ALL_CART'
 }
 
 export function modifyQuantityCoffeeAction(idCoffee: number, operation: string) {
@@ -29,6 +30,12 @@ export function removeCoffeCartAction(idCoffee: number) {
     payload: {
       idCoffee
     }
+  }
+}
+
+export function cleanAllAction() {
+  return {
+    type: ActionTypes.CLEAN_ALL_CART
   }
 }
 
